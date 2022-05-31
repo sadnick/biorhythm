@@ -34,5 +34,10 @@ namespace biorhythm
         {
 
         }
+
+        private void Dates_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -5,28 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:biorhythm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="500" Width="950">
+    <Grid Margin="0,0,-135,-46">
         <Grid.RowDefinitions>
             <RowDefinition Height="190px"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" Margin="0,0,365,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.8*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="0.7*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Row="0" Grid.Column="0">
+            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0,268,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
             </Grid>
 
-            <GroupBox Header="Исходные данные" Padding="5" Margin="5">
+            <GroupBox Header="Исходные данные" Padding="5" Margin="5,5,253,-4" Grid.ColumnSpan="2">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -42,7 +42,7 @@
                   FirstDayOfWeek="Monday" Width="120px" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
                     <Label VerticalAlignment="Center" Grid.Row="1">Дата отсчета:</Label>
-                    <DatePicker x:Name="countDownTime" Grid.Row="1" SelectedDateFormat="Long" SelectedDate="05/31/2022"
+                    <DatePicker x:Name="countDownTime" Grid.Row="1" SelectedDateFormat="Long" SelectedDate="05/2/2022"
                   DisplayDateStart="01/01/1910" 
                   FirstDayOfWeek="Monday" Width="120px" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
@@ -70,9 +70,14 @@
                 </Grid>
 
             </GroupBox>
+            <GroupBox Grid.Column="2" Header="Статистика" Padding="5" Margin="227,5,-217,5">
+                <ScrollViewer>
 
-            <GroupBox Grid.Column="1" Header="Рассчетные данные" Padding="5" Margin="5">
-                <DataGrid IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" Name="Dates" >
+                </ScrollViewer>
+            </GroupBox>
+
+            <GroupBox Header="Рассчетные данные" Padding="5" Margin="36,5,-25,-5" Grid.ColumnSpan="2" Grid.Column="1">
+                <DataGrid IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" Name="Dates" SelectionChanged="Dates_SelectionChanged" Height="175" Margin="-6,0,-7,0" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Date}" Width="*" Header="Дата"></DataGridTextColumn>
                         <DataGridTextColumn Binding="{Binding Physical}" Width="*" Header="Физический"></DataGridTextColumn>
@@ -81,8 +86,8 @@
                         <DataGridTextColumn Binding="{Binding Total}" Width="*" Header="Суммарное"></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-            </GroupBox>           
+            </GroupBox>
 
-        </Grid> 
+        </Grid>
     </Grid>
 </Window>
