@@ -1,0 +1,88 @@
+﻿<Window x:Class="biorhythm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:biorhythm"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="190px"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.8*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="0.7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+            <GroupBox Header="Исходные данные" Padding="5" Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label VerticalAlignment="Center" Grid.Row="0">Дата рождения:</Label>
+                    <DatePicker x:Name="BirthDate" Grid.Row="0" SelectedDateFormat="Long" SelectedDate="01/04/2002"
+                  DisplayDateStart="01/01/1910" DisplayDateEnd="01/01/2022" 
+                  FirstDayOfWeek="Monday" Width="120px" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+                    <Label VerticalAlignment="Center" Grid.Row="1">Дата отсчета:</Label>
+                    <DatePicker x:Name="countDownTime" Grid.Row="1" SelectedDateFormat="Long" SelectedDate="05/31/2022"
+                  DisplayDateStart="01/01/1910" 
+                  FirstDayOfWeek="Monday" Width="120px" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+                    <Label Grid.Row="2" VerticalAlignment="Center">Длительность прогноза:</Label>
+                    <ComboBox Name="cmbCountdown" Width="50px" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right">
+                        <ComboBoxItem IsSelected="True">10</ComboBoxItem>
+                        <ComboBoxItem>20</ComboBoxItem>
+                        <ComboBoxItem>30</ComboBoxItem>
+                        <ComboBoxItem>40</ComboBoxItem>
+                        <ComboBoxItem>50</ComboBoxItem>
+                        <ComboBoxItem>60</ComboBoxItem>
+                        <ComboBoxItem>70</ComboBoxItem>
+                        <ComboBoxItem>80</ComboBoxItem>
+                        <ComboBoxItem>90</ComboBoxItem>
+                        <ComboBoxItem>100</ComboBoxItem>
+                    </ComboBox>
+
+                    <CheckBox VerticalAlignment="Center" Grid.Row="3" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">
+                        <TextBlock>Произвольная длительность прогноза</TextBlock>
+                    </CheckBox>
+
+                    <TextBox x:Name="arbitrary" IsEnabled="False" VerticalAlignment="Center" HorizontalAlignment="Right" Width="40px" Text="100" Grid.Row="5">
+
+                    </TextBox>
+                </Grid>
+
+            </GroupBox>
+
+            <GroupBox Grid.Column="1" Header="Рассчетные данные" Padding="5" Margin="5">
+                <DataGrid IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" Name="Dates" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Date}" Width="*" Header="Дата"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Physical}" Width="*" Header="Физический"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Emotional}" Width="*" Header="Эмоциональный"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Intellectual}" Width="*" Header="Интелектуальный"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Total}" Width="*" Header="Суммарное"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>           
+
+        </Grid> 
+    </Grid>
+</Window>
