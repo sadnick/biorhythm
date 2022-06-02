@@ -42,7 +42,7 @@
                   FirstDayOfWeek="Monday" Width="120px" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
                     <Label VerticalAlignment="Center" Grid.Row="1">Дата отсчета:</Label>
-                    <DatePicker x:Name="countDownTime" Grid.Row="1" SelectedDateFormat="Long" SelectedDate="05/27/2022"
+                    <DatePicker x:Name="countDownTime" Grid.Row="1" SelectedDateFormat="Long" SelectedDate="06/03/2022"
                   DisplayDateStart="01/01/1010" 
                   FirstDayOfWeek="Monday" Width="120px" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
