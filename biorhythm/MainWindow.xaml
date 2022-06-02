@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:biorhythm"
+        xmlns:local="clr-namespace:biorhythm" xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="566.306" Width="1075.98">
     <Grid>
@@ -26,7 +26,7 @@
                 </Grid.ColumnDefinitions>
             </Grid>
 
-            <GroupBox Header="Исходные данные" Padding="5" Margin="5">
+            <GroupBox Header="Ввод данных" Padding="5" Margin="5">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -42,7 +42,7 @@
                   FirstDayOfWeek="Monday" Width="120px" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
                     <Label VerticalAlignment="Center" Grid.Row="1">Дата отсчета:</Label>
-                    <DatePicker x:Name="countDownTime" Grid.Row="1" SelectedDateFormat="Long" SelectedDate="06/01/2022"
+                    <DatePicker x:Name="countDownTime" Grid.Row="1" SelectedDateFormat="Long" SelectedDate="05/27/2022"
                   DisplayDateStart="01/01/1010" 
                   FirstDayOfWeek="Monday" Width="120px" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
@@ -84,9 +84,7 @@
             </GroupBox>
 
             <GroupBox Grid.Column="2" Header="Статистика" Padding="5" Margin="5">
-                <ScrollViewer>
-
-                </ScrollViewer>
+            <ListBox Name="stat"></ListBox>             
             </GroupBox>
 
         </Grid>
@@ -99,16 +97,16 @@
                     </Style>
                 </Button.Resources>
                 <StackPanel Orientation="Horizontal" Margin="5 0">
-
-                    <TextBlock VerticalAlignment="Center"><Run Text="Посторить гарфик"/></TextBlock>
+                 <TextBlock VerticalAlignment="Center"><Run Text="Посторить гарфик"/></TextBlock>
                 </StackPanel>
             </Button>
-
-            <CheckBox VerticalAlignment="Center">Выводить дату на шкале</CheckBox>
+            
+            <CheckBox x:Name="dateon" VerticalAlignment="Center">Выводить дату на шкале</CheckBox>
         </WrapPanel>
 
         <GroupBox Grid.Row="3" Header="График" Padding="5" Margin="5">
-
+            <lvc:CartesianChart Name="chart"  LegendLocation="Right" >
+            </lvc:CartesianChart>
         </GroupBox>
 
     </Grid>
