@@ -72,7 +72,7 @@
             </GroupBox>
 
             <GroupBox Grid.Column="1" Header="Рассчетные данные" Padding="5" Margin="5">
-                <DataGrid IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" Name="Dates" >
+                <DataGrid IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" Name="Dates" Height="149" Margin="-4,0,-8,0" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Date}" Width="*" Header="Дата"></DataGridTextColumn>
                         <DataGridTextColumn Binding="{Binding Physical}" Width="*" Header="Физический"></DataGridTextColumn>
@@ -84,7 +84,7 @@
             </GroupBox>
 
             <GroupBox Grid.Column="2" Header="Статистика" Padding="5" Margin="5">
-            <ListBox Name="stat"></ListBox>             
+                <ListBox Name="stat" Height="149" Margin="-5,0,-8,0"></ListBox>
             </GroupBox>
 
         </Grid>
@@ -97,10 +97,10 @@
                     </Style>
                 </Button.Resources>
                 <StackPanel Orientation="Horizontal" Margin="5 0">
-                 <TextBlock VerticalAlignment="Center"><Run Text="Посторить гарфик"/></TextBlock>
+                    <TextBlock VerticalAlignment="Center"><Run Text="Посторить гарфик"/></TextBlock>
                 </StackPanel>
             </Button>
-            
+
             <CheckBox x:Name="dateon" VerticalAlignment="Center">Выводить дату на шкале</CheckBox>
         </WrapPanel>
 
