@@ -100,7 +100,7 @@
                 </Button.Resources>
                 <StackPanel Orientation="Horizontal" Margin="5 0">
 
-                    <TextBlock VerticalAlignment="Center"><Run Text="Посторить гарфик"/></TextBlock>
+                    <TextBlock VerticalAlignment="Center"><Run Text="Построить гарфик"/></TextBlock>
                 </StackPanel>
             </Button>
 
